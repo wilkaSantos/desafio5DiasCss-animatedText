@@ -1,0 +1,89 @@
+/* = = = GLOBAL = = = */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    font-size: 62.5%;
+
+    --bg-hero: #212529;
+    --txt-static: #dc2f02;
+
+    --font: 'Poppins', sans-serif;
+    --c-items: #ece9e9;
+}
+
+
+/* = = = HERO = = = */
+.hero{
+    background: var(--bg-hero);
+    font-family: var(--font);
+
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapperd{
+    display: inline-flex;
+}
+
+p{
+    color: var(--txt-static);
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.wrapperd .list{
+    margin-left: 1rem;
+    height: 3.5rem;
+    line-height: 4rem;
+    overflow: hidden;
+}
+
+.items-list{
+    position: relative;
+    top: 0;
+    list-style: none;
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: var(--c-items);
+
+    animation: slide 6s steps(4) infinite;
+}
+
+.items-list span{ position: relative;}
+
+.items-list span::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-left: 1px solid var(--c-items);
+    background: var(--bg-hero);
+
+    animation: write 1.5s steps(10) infinite;
+}
+
+/* = = = ANIMATIONS = = = */
+
+@keyframes write{
+    100%{
+        left: 100%;
+        margin: 0 -3.5rem 0 3.5rem;
+    }
+}
+
+@keyframes slide{
+    100%{
+        top: -15.7rem
+    }
+}
